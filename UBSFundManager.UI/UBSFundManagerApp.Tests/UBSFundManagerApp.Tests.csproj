@@ -53,6 +53,8 @@
     <Reference Include="Moq">
       <HintPath>..\packages\Moq.4.2.1510.2205\lib\net40\Moq.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="Prism">
       <HintPath>..\packages\Prism.Core.6.1.0\lib\net45\Prism.dll</HintPath>
     </Reference>
@@ -63,7 +65,10 @@
       <HintPath>..\packages\Prism.Wpf.6.1.0\lib\net45\Prism.Wpf.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <Choose>
     <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
@@ -78,11 +83,31 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="BlotterViewModelTests.cs" />
     <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\UBSFundManager.FundsBlotter\UBSFundManager.FundsBlotter.csproj">
+      <Project>{c5716671-6c88-4358-b04c-2c1a58b0bff4}</Project>
+      <Name>UBSFundManager.FundsBlotter</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UBSFundManager.Infrastructure\UBSFundManager.Infrastructure.csproj">
+      <Project>{8c353d83-50af-4f22-aab6-0d1b193cdb49}</Project>
+      <Name>UBSFundManager.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UBSFundManager.UI\UBSFundManager.UI.csproj">
+      <Project>{957d105a-b56b-4f3f-9edd-cd49f6aa3e49}</Project>
+      <Name>UBSFundManager.UI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UBSFundsManager.DTOs\UBSFundsManager.DTOs.csproj">
+      <Project>{7b9b231b-c548-4fcd-8b11-e877a063d0a5}</Project>
+      <Name>UBSFundsManager.DTOs</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

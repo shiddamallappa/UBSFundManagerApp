@@ -4,7 +4,7 @@
 library
 C#
 .cs
-D:\UBSHandsOn\UBSFundManagerApp\UBSFundManager.UI\UBSFundManager.FundsBlotter\obj\Debug\
+D:\UBSHandsOn\UBSFundManagerApp\UBSFundManagerApp\UBSFundManager.UI\UBSFundManager.FundsBlotter\obj\Debug\
 UBSFundManager.FundsBlotter
 none
 false
@@ -13,7 +13,7 @@ DEBUG;TRACE
 3-764508087
 21169998187
 19-943573829
-791943940449
+79-1288477833
 Views\BlotterView.xaml;Views\StockSummaryView.xaml;Views\StockView.xaml;
 
 False

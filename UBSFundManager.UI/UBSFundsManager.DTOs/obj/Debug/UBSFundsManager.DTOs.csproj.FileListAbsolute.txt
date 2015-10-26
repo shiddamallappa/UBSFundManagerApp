@@ -3,3 +3,8 @@ D:\UBSHandsOn\UBSFundManagerApp\UBSFundManager.UI\UBSFundsManager.DTOs\bin\Debug
 D:\UBSHandsOn\UBSFundManagerApp\UBSFundManager.UI\UBSFundsManager.DTOs\obj\Debug\UBSFundsManager.DTOs.csprojResolveAssemblyReference.cache
 D:\UBSHandsOn\UBSFundManagerApp\UBSFundManager.UI\UBSFundsManager.DTOs\obj\Debug\UBSFundsManager.DTOs.dll
 D:\UBSHandsOn\UBSFundManagerApp\UBSFundManager.UI\UBSFundsManager.DTOs\obj\Debug\UBSFundsManager.DTOs.pdb
+D:\UBSHandsOn\UBSFundManagerApp\UBSFundManagerApp\UBSFundManager.UI\UBSFundsManager.DTOs\bin\Debug\UBSFundsManager.DTOs.dll
+D:\UBSHandsOn\UBSFundManagerApp\UBSFundManagerApp\UBSFundManager.UI\UBSFundsManager.DTOs\bin\Debug\UBSFundsManager.DTOs.pdb
+D:\UBSHandsOn\UBSFundManagerApp\UBSFundManagerApp\UBSFundManager.UI\UBSFundsManager.DTOs\obj\Debug\UBSFundsManager.DTOs.csprojResolveAssemblyReference.cache
+D:\UBSHandsOn\UBSFundManagerApp\UBSFundManagerApp\UBSFundManager.UI\UBSFundsManager.DTOs\obj\Debug\UBSFundsManager.DTOs.dll
+D:\UBSHandsOn\UBSFundManagerApp\UBSFundManagerApp\UBSFundManager.UI\UBSFundsManager.DTOs\obj\Debug\UBSFundsManager.DTOs.pdb
