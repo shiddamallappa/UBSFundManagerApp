@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="UBSFundsDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="UBSFundsDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tblStockTypes" EntityType="UBSFundsDBModel.tblStockType" />
+    <FunctionImport Name="spGetAllFundsByUserId" ReturnType="Collection(UBSFundsDBModel.spGetAllFundsByUserId_Result)">
+      <Parameter Name="userId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="spGetAllFundsSummary" ReturnType="Collection(UBSFundsDBModel.spGetAllFundsSummary_Result)">
+      <Parameter Name="userId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="tblStocks" EntityType="UBSFundsDBModel.tblStock" />
+  </EntityContainer>
+  <EntityType Name="tblStockType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="StockType" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="TransactionCharge" Type="Decimal" Precision="18" Scale="6" />
+  </EntityType>
+  <ComplexType Name="spGetAllFundsByUserId_Result">
+    <Property Type="Int32" Name="BlotterId" Nullable="false" />
+    <Property Type="String" Name="StockName" Nullable="true" MaxLength="30" />
+    <Property Type="Int32" Name="StockTypeId" Nullable="true" />
+    <Property Type="String" Name="StockType" Nullable="false" MaxLength="30" />
+    <Property Type="Decimal" Name="Price" Nullable="true" Precision="18" Scale="8" />
+    <Property Type="Int32" Name="Quantity" Nullable="true" />
+    <Property Type="Decimal" Name="MarketValue" Nullable="true" Precision="28" Scale="2" />
+    <Property Type="Decimal" Name="TransactionCost" Nullable="true" Precision="28" Scale="2" />
+    <Property Type="Decimal" Name="StockWieght" Nullable="true" Precision="28" Scale="6" />
+  </ComplexType>
+  <ComplexType Name="spGetAllFundsSummary_Result">
+    <Property Type="Int32" Name="TypeId" Nullable="true" />
+    <Property Type="String" Name="StockType" Nullable="false" MaxLength="30" />
+    <Property Type="Int32" Name="TotalQuantity" Nullable="true" />
+    <Property Type="Decimal" Name="TotalMarketValue" Nullable="true" Precision="38" Scale="2" />
+    <Property Type="Decimal" Name="TotalStockWeight" Nullable="true" Precision="38" Scale="6" />
+  </ComplexType>
+  <EntityType Name="tblStock">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StockName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="StockType" Type="Int32" />
+    <Property Name="Price" Type="Decimal" Precision="18" Scale="8" />
+    <Property Name="Quantity" Type="Int32" />
+    <Property Name="MarketValue" Type="Decimal" Precision="28" Scale="2" />
+    <Property Name="TransactionCost" Type="Decimal" Precision="28" Scale="2" />
+    <Property Name="StockWieght" Type="Decimal" Precision="28" Scale="6" />
+    <Property Name="UserId" Type="Int32" />
+  </EntityType>
+</Schema>

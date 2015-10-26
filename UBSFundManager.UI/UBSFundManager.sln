@@ -1,0 +1,67 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UBSFundManager.UI", "UBSFundManager.UI\UBSFundManager.UI.csproj", "{957D105A-B56B-4F3F-9EDD-CD49F6AA3E49}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UBSFundManager.Infrastructure", "UBSFundManager.Infrastructure\UBSFundManager.Infrastructure.csproj", "{8C353D83-50AF-4F22-AAB6-0D1B193CDB49}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{87EB98D5-EC6B-4839-9894-9C26D33B65B4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Utility", "Utility", "{DE975092-8E88-4CC8-8BCF-2CB78B6B7421}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{C9233A64-1A87-474F-831F-3BC4950D402B}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UBSFundManager.FundsBlotter", "UBSFundManager.FundsBlotter\UBSFundManager.FundsBlotter.csproj", "{C5716671-6C88-4358-B04C-2C1A58B0BFF4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{A4EA9982-6BD4-4E87-88F0-F61F2119E15F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UBSFundsManager.DTOs", "UBSFundsManager.DTOs\UBSFundsManager.DTOs.csproj", "{7B9B231B-C548-4FCD-8B11-E877A063D0A5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{3ECA98F3-B6B2-449D-8754-4B84279FB15B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UBSFundManagerApp.Tests", "UBSFundManagerApp.Tests\UBSFundManagerApp.Tests.csproj", "{F53AF988-2108-460E-802A-E50DC0095C11}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{957D105A-B56B-4F3F-9EDD-CD49F6AA3E49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{957D105A-B56B-4F3F-9EDD-CD49F6AA3E49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{957D105A-B56B-4F3F-9EDD-CD49F6AA3E49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{957D105A-B56B-4F3F-9EDD-CD49F6AA3E49}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C353D83-50AF-4F22-AAB6-0D1B193CDB49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C353D83-50AF-4F22-AAB6-0D1B193CDB49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C353D83-50AF-4F22-AAB6-0D1B193CDB49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C353D83-50AF-4F22-AAB6-0D1B193CDB49}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5716671-6C88-4358-B04C-2C1A58B0BFF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5716671-6C88-4358-B04C-2C1A58B0BFF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5716671-6C88-4358-B04C-2C1A58B0BFF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5716671-6C88-4358-B04C-2C1A58B0BFF4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B9B231B-C548-4FCD-8B11-E877A063D0A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B9B231B-C548-4FCD-8B11-E877A063D0A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B9B231B-C548-4FCD-8B11-E877A063D0A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B9B231B-C548-4FCD-8B11-E877A063D0A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F53AF988-2108-460E-802A-E50DC0095C11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F53AF988-2108-460E-802A-E50DC0095C11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F53AF988-2108-460E-802A-E50DC0095C11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F53AF988-2108-460E-802A-E50DC0095C11}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8C353D83-50AF-4F22-AAB6-0D1B193CDB49} = {DE975092-8E88-4CC8-8BCF-2CB78B6B7421}
+		{C5716671-6C88-4358-B04C-2C1A58B0BFF4} = {87EB98D5-EC6B-4839-9894-9C26D33B65B4}
+		{7B9B231B-C548-4FCD-8B11-E877A063D0A5} = {A4EA9982-6BD4-4E87-88F0-F61F2119E15F}
+		{F53AF988-2108-460E-802A-E50DC0095C11} = {3ECA98F3-B6B2-449D-8754-4B84279FB15B}
+	EndGlobalSection
+EndGlobal

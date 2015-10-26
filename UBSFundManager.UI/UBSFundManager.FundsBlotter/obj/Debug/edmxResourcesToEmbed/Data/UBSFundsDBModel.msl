@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="UBSFundsDBModelStoreContainer" CdmEntityContainer="UBSFundsDBEntities">
+    <EntitySetMapping Name="tblStockTypes">
+      <EntityTypeMapping TypeName="UBSFundsDBModel.tblStockType">
+        <MappingFragment StoreEntitySet="tblStockType">
+          <ScalarProperty Name="TransactionCharge" ColumnName="TransactionCharge" />
+          <ScalarProperty Name="StockType" ColumnName="StockType" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="spGetAllFundsByUserId" FunctionName="UBSFundsDBModel.Store.spGetAllFundsByUserId">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="UBSFundsDBModel.spGetAllFundsByUserId_Result">
+          <ScalarProperty Name="BlotterId" ColumnName="BlotterId" />
+          <ScalarProperty Name="StockName" ColumnName="StockName" />
+          <ScalarProperty Name="StockTypeId" ColumnName="StockTypeId" />
+          <ScalarProperty Name="StockType" ColumnName="StockType" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="MarketValue" ColumnName="MarketValue" />
+          <ScalarProperty Name="TransactionCost" ColumnName="TransactionCost" />
+          <ScalarProperty Name="StockWieght" ColumnName="StockWieght" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spGetAllFundsSummary" FunctionName="UBSFundsDBModel.Store.spGetAllFundsSummary">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="UBSFundsDBModel.spGetAllFundsSummary_Result">
+          <ScalarProperty Name="TypeId" ColumnName="TypeId" />
+          <ScalarProperty Name="StockType" ColumnName="StockType" />
+          <ScalarProperty Name="TotalQuantity" ColumnName="TotalQuantity" />
+          <ScalarProperty Name="TotalMarketValue" ColumnName="TotalMarketValue" />
+          <ScalarProperty Name="TotalStockWeight" ColumnName="TotalStockWeight" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="tblStocks">
+      <EntityTypeMapping TypeName="UBSFundsDBModel.tblStock">
+        <MappingFragment StoreEntitySet="tblStocks">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="StockWieght" ColumnName="StockWieght" />
+          <ScalarProperty Name="TransactionCost" ColumnName="TransactionCost" />
+          <ScalarProperty Name="MarketValue" ColumnName="MarketValue" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="StockType" ColumnName="StockType" />
+          <ScalarProperty Name="StockName" ColumnName="StockName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

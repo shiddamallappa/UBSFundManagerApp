@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="UBSFundsDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="tblStocks">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StockName" Type="varchar" MaxLength="30" />
+          <Property Name="StockType" Type="int" />
+          <Property Name="Price" Type="decimal" Precision="18" Scale="8" />
+          <Property Name="Quantity" Type="int" />
+          <Property Name="MarketValue" Type="decimal" Precision="28" Scale="2" />
+          <Property Name="TransactionCost" Type="decimal" Precision="28" Scale="2" />
+          <Property Name="StockWieght" Type="decimal" Precision="28" Scale="6" />
+          <Property Name="UserId" Type="int" />
+        </EntityType>
+        <EntityType Name="tblStockType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="StockType" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="TransactionCharge" Type="decimal" Precision="18" Scale="6" />
+        </EntityType>
+        <Function Name="spGetAllFundsByUserId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="userId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="spGetAllFundsSummary" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="userId" Type="int" Mode="In" />
+        </Function>
+        <EntityContainer Name="UBSFundsDBModelStoreContainer">
+          <EntitySet Name="tblStocks" EntityType="Self.tblStocks" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblStockType" EntityType="Self.tblStockType" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="UBSFundsDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="UBSFundsDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tblStockTypes" EntityType="UBSFundsDBModel.tblStockType" />
+          <FunctionImport Name="spGetAllFundsByUserId" ReturnType="Collection(UBSFundsDBModel.spGetAllFundsByUserId_Result)">
+          <Parameter Name="userId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spGetAllFundsSummary" ReturnType="Collection(UBSFundsDBModel.spGetAllFundsSummary_Result)">
+          <Parameter Name="userId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <EntitySet Name="tblStocks" EntityType="UBSFundsDBModel.tblStock" />
+        </EntityContainer>
+        <EntityType Name="tblStockType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="StockType" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="TransactionCharge" Type="Decimal" Precision="18" Scale="6" />
+        </EntityType>
+        <ComplexType Name="spGetAllFundsByUserId_Result">
+          <Property Type="Int32" Name="BlotterId" Nullable="false" />
+          <Property Type="String" Name="StockName" Nullable="true" MaxLength="30" />
+          <Property Type="Int32" Name="StockTypeId" Nullable="true" />
+          <Property Type="String" Name="StockType" Nullable="false" MaxLength="30" />
+          <Property Type="Decimal" Name="Price" Nullable="true" Precision="18" Scale="8" />
+          <Property Type="Int32" Name="Quantity" Nullable="true" />
+          <Property Type="Decimal" Name="MarketValue" Nullable="true" Precision="28" Scale="2" />
+          <Property Type="Decimal" Name="TransactionCost" Nullable="true" Precision="28" Scale="2" />
+          <Property Type="Decimal" Name="StockWieght" Nullable="true" Precision="28" Scale="6" />
+        </ComplexType>
+        <ComplexType Name="spGetAllFundsSummary_Result">
+          <Property Type="Int32" Name="TypeId" Nullable="true" />
+          <Property Type="String" Name="StockType" Nullable="false" MaxLength="30" />
+          <Property Type="Int32" Name="TotalQuantity" Nullable="true" />
+          <Property Type="Decimal" Name="TotalMarketValue" Nullable="true" Precision="38" Scale="2" />
+          <Property Type="Decimal" Name="TotalStockWeight" Nullable="true" Precision="38" Scale="6" />
+        </ComplexType>
+        <EntityType Name="tblStock">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StockName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="StockType" Type="Int32" />
+          <Property Name="Price" Type="Decimal" Precision="18" Scale="8" />
+          <Property Name="Quantity" Type="Int32" />
+          <Property Name="MarketValue" Type="Decimal" Precision="28" Scale="2" />
+          <Property Name="TransactionCost" Type="Decimal" Precision="28" Scale="2" />
+          <Property Name="StockWieght" Type="Decimal" Precision="28" Scale="6" />
+          <Property Name="UserId" Type="Int32" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="UBSFundsDBModelStoreContainer" CdmEntityContainer="UBSFundsDBEntities">
+          <EntitySetMapping Name="tblStockTypes">
+            <EntityTypeMapping TypeName="UBSFundsDBModel.tblStockType">
+              <MappingFragment StoreEntitySet="tblStockType">
+                <ScalarProperty Name="TransactionCharge" ColumnName="TransactionCharge" />
+                <ScalarProperty Name="StockType" ColumnName="StockType" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="spGetAllFundsByUserId" FunctionName="UBSFundsDBModel.Store.spGetAllFundsByUserId">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="UBSFundsDBModel.spGetAllFundsByUserId_Result">
+                <ScalarProperty Name="BlotterId" ColumnName="BlotterId" />
+                <ScalarProperty Name="StockName" ColumnName="StockName" />
+                <ScalarProperty Name="StockTypeId" ColumnName="StockTypeId" />
+                <ScalarProperty Name="StockType" ColumnName="StockType" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="MarketValue" ColumnName="MarketValue" />
+                <ScalarProperty Name="TransactionCost" ColumnName="TransactionCost" />
+                <ScalarProperty Name="StockWieght" ColumnName="StockWieght" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spGetAllFundsSummary" FunctionName="UBSFundsDBModel.Store.spGetAllFundsSummary">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="UBSFundsDBModel.spGetAllFundsSummary_Result">
+                <ScalarProperty Name="TypeId" ColumnName="TypeId" />
+                <ScalarProperty Name="StockType" ColumnName="StockType" />
+                <ScalarProperty Name="TotalQuantity" ColumnName="TotalQuantity" />
+                <ScalarProperty Name="TotalMarketValue" ColumnName="TotalMarketValue" />
+                <ScalarProperty Name="TotalStockWeight" ColumnName="TotalStockWeight" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="tblStocks">
+            <EntityTypeMapping TypeName="UBSFundsDBModel.tblStock">
+              <MappingFragment StoreEntitySet="tblStocks">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="StockWieght" ColumnName="StockWieght" />
+                <ScalarProperty Name="TransactionCost" ColumnName="TransactionCost" />
+                <ScalarProperty Name="MarketValue" ColumnName="MarketValue" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="StockType" ColumnName="StockType" />
+                <ScalarProperty Name="StockName" ColumnName="StockName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

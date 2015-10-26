@@ -1,0 +1,4 @@
+D:\UBSHandsOn\UBSFundManagerApp\UBSFundManager.UI\UBSFundsManager.DTOs\bin\Release\UBSFundsManager.DTOs.dll
+D:\UBSHandsOn\UBSFundManagerApp\UBSFundManager.UI\UBSFundsManager.DTOs\bin\Release\UBSFundsManager.DTOs.pdb
+D:\UBSHandsOn\UBSFundManagerApp\UBSFundManager.UI\UBSFundsManager.DTOs\obj\Release\UBSFundsManager.DTOs.dll
+D:\UBSHandsOn\UBSFundManagerApp\UBSFundManager.UI\UBSFundsManager.DTOs\obj\Release\UBSFundsManager.DTOs.pdb
