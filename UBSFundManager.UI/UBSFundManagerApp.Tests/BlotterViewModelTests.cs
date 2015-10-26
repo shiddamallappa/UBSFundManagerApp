@@ -31,7 +31,7 @@ namespace UBSFundManagerApp.Tests
             
             Assert.IsNotNull(viewModel.Stocks);
             Assert.IsTrue(viewModel.Stocks.Contains(stockobject));
-            mockFundService.Verify(s => s.GetAllStocks(userId), Times.Once);
+            mockFundService.Verify(s => s.GetAllStocks(It.IsAny<int>()), Times.Once);
             mockEventAggtr.Verify(s => s.GetEvent<StockUpdatedEvent>(), Times.Once);
             mockEventAggtr.Verify(s => s.GetEvent<CancelStockSelectedEvent>(), Times.Once);
             factory.Verify();
